@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# javantas - a script to build a quick dir structure, file, and build.sh for Java projects
+
 if [ $# -eq 0 ]
 then
   echo "______________________________________"
