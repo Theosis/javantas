@@ -13,7 +13,7 @@ then
   exit 1
 fi
 
-echo $1 | grep -q '[0-9]'
+echo $1 | grep -q '^[0-9]'
 
 if [ $? = 0 ]
 then
