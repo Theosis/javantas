@@ -21,9 +21,16 @@ then
   exit 1
 fi
 
+echo ""
+echo "Welcome to javantas..."
+echo "----------------------------------------"
+
 mkdir $1
+echo "...created directory  $1"
 mkdir $1/src
+echo "...created directory  $1/src"
 mkdir $1/bin
+echo "...created directory  $1/bin"
 touch $1/src/$1.java
 
 echo 'public class '$1' {
@@ -40,6 +47,7 @@ echo 'public class '$1' {
     new '$1'().init();
   }
 }' > $1/src/$1.java
+echo "...created file       $1/src/$1.java"
 
 echo '#!/bin/bash
 
@@ -50,8 +58,11 @@ rm sources_list.txt
 ' > $1/build.sh
 
 echo 'java -cp bin '$1 >> $1/build.sh
+echo "...created file       $1/build.sh"
 
 chmod a+x $1/build.sh
 
-echo "You are ready sucka!!"
 
+echo "----------------------------------------"
+echo "Project: $1 created and ready to go!"
+echo ""
