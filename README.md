@@ -1,12 +1,18 @@
 ## Javantas 
 
-Javantas is a small bash script to start a quick java project from the command line. It takes the name of your project as a single argument and builds out the project directory structure and your first class with a `main` function.
+Javantas is a small bash script to start a quick Java project from the command line. It takes the name of your project as a single argument and builds out the project directory structure and your first class file with a `main` function.
 
 ### Usage
 
 ```bash
-$ ./create_java_proj.sh MyProject
+$ ./javantas.sh MyProject
 ``` 
+
+If you install the script into `/usr/local/bin/` (see [Installation](#installation) section for details), you can run the script from anywhere like so:
+
+```bash
+$ javantas MyProject
+```
 
 This will create a directory structure that looks like:
 
@@ -17,7 +23,6 @@ This will create a directory structure that looks like:
 │   └── src
 │       └── MyProject.java
 ```
-
 
 ### Main Class file
 
@@ -39,3 +44,29 @@ public class MyProject {
   }
 }
 ```
+
+### Build
+
+Javantas creates a really simple `build.sh` file. For small projects is should suffice. Running it will compile your .java files into the `bin` directory and then run the main application's `main` function.
+
+### Installation
+
+Either clone the repo or download the zip file from the repo at [https://github.com/knomedia/javantas](https://github.com/knomedia/javantas). You have two options.
+
+1. Copy the javantas.sh file around to where you want to use it (not so special).
+2. Make the script globally available on your system (extra special).
+
+Rather than copying the file around to use, or remembering where you have saved it, consider dropping it in with your other executable files on you linux machine. For most linux based systems (including OS X) that means copying it to:
+
+```bash
+/usr/local/bin
+```
+
+To do so `cd` into the directory where you have the `javantas.sh` file at and copy the file by running the following in bash:
+
+```bash
+mv javantas.sh /usr/local/bin/javantas
+```
+
+**Note** that the example leaves the `.sh` off the file name when you copy it over, this will make using it seem more natural to most.
+
