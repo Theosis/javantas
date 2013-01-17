@@ -40,7 +40,7 @@ echo 'public class '$1' {
   }
 
   public void init() {
-    System.out.println("Hello");
+    System.out.println("Hello from '$1'");
   }
  
  public static void main (String [] args) {
